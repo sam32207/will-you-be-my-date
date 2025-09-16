@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Invite 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+    Your browser does not support audio.
+  </audio>
+
+  <div class="container">
+    <h1>Hi My Love 💕</h1> 
+    <h2>Will you be my date tomorrow, 09/17/25? 🥰</h2> 
+
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" id="noBtn">No 😝</button> 
+  </div>
+
+  <script>
+    // Redirect if she clicks Yes
+    function sayYes() {
+      window.location.href = "yes.html";
+    }
+
+    // Make the "No" button run away
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * 200) - 100;
+      const y = Math.floor(Math.random() * 200) - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
