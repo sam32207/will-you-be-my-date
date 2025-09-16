@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yeeeeey!!!</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1 { 
+      color: #ff4d6d; 
+      animation: bounce 1.5s infinite; 
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music continues -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container">
+    <h1>Yaaay! Best decision ever hihi 💖</h1>
+    <h2>I can’t wait to see you tomorrow mahal 🥰</h2>
+    <p>(Mag handa ka na sa surprise 👀)</p>
+  </div>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script>
+    // Fire confetti for 5 seconds
+    function launchConfetti() {
+      const duration = 5 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+    window.onload = launchConfetti;
+  </script>
+</body>
+</html>
