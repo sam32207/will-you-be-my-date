@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Date Invite 💌</title>
+  <title>Date Invitation 💌</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mp3">
-    Your browser does not support audio.
-  </audio>
+<audio id="bgMusic" autoplay loop muted>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // unmute on first click
+  document.body.addEventListener("click", () => {
+    const music = document.getElementById("bgMusic");
+    music.muted = false;
+    music.play();
+  }, { once: true });
+</script>
 
   <div class="container">
     <h1>Hi My Love 💕</h1> 
